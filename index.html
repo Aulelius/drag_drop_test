@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+<body>
+    <div class="sec_cal">
+        <div class="cal_nav">
+          <a href="javascript:;" class="nav-btn go-prev">prev</a>
+          <div class="year-month"></div>
+          <a href="javascript:;" class="nav-btn go-next">next</a>
+        </div>
+        <div class="cal_wrap">
+          <div class="days">
+            <div class="day">MON</div>
+            <div class="day">TUE</div>
+            <div class="day">WED</div>
+            <div class="day">THU</div>
+            <div class="day">FRI</div>
+            <div class="day">SAT</div>
+            <div class="day">SUN</div>
+          </div>
+          <div class="dates"></div>
+        </div>
+      </div>
+      
+
+
+<!-- <div draggable="true" class="item">
+<p>드래그용 아이템</p>
+</div>
+<div class="dragBox">
+    <kbd>드래그가 들어갈 상자</kbd>
+</div> -->
+
+
+</body>
+<script>
+const item = document.querySelector(".item");
+const dragBox = document.querySelector(".dragBox");
+
+dragBox.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    console.log("드래그 오버");
+});
+
+dragBox.addEventListener("drop", (e) => {
+e.preventDefault();
+e.target.innerHTML = '';
+e.target.append("드롭이 되면 이 텍스트가 추가된다.");
+console.log(e);
+console.log("드롭 이벤트");
+});
+</script>
+</html>
